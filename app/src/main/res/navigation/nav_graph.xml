@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstfragment">
+
+    <fragment
+        android:id="@+id/firstfragment"
+        android:name="com.abhaykumar.navigationfragment.fragments.FirstFragment"
+        android:label="First Fragment"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/first_to_first_fragment"
+            app:destination="@id/second_fragment" />
+
+        <action
+            android:id="@+id/action_firstfragment_to_third_fragment"
+            app:destination="@id/third_fragment" />
+        <action
+            android:id="@+id/action_firstfragment_to_second_fragment"
+            app:destination="@id/second_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="com.abhaykumar.navigationfragment.fragments.SecondFragment"
+        android:label="Second Fragment"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/second_to_third_fragment"
+            app:destination="@+id/third_fragment" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/third_fragment"
+        android:name="com.abhaykumar.navigationfragment.fragments.ThirdFragment"
+        android:label="Third Fragment"
+        tools:layout="@layout/fragment_third">
+
+        <action
+            android:id="@+id/third_fragment_to_second"
+            app:destination="@id/second_fragment" />
+        <action
+            android:id="@+id/action_third_fragment_to_firstfragment"
+            app:destination="@id/firstfragment" />
+
+    </fragment>
+
+</navigation>
